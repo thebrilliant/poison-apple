@@ -41,18 +41,18 @@
                     <navigationItem key="navigationItem" id="vwQ-Sg-ZLg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="Pi1-P7-dXc" kind="show" id="H4p-86-BGG"/>
-                        <segue destination="HDg-H8-mDV" kind="show" id="3B5-95-mdg"/>
+                        <segue destination="Pi1-P7-dXc" kind="show" identifier="toMenu" id="H4p-86-BGG"/>
+                        <segue destination="HDg-H8-mDV" kind="show" identifier="toSettings" id="3B5-95-mdg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7Z-if-ZJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956.5" y="339.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu Controller-->
         <scene sceneID="mtF-7q-npG">
             <objects>
-                <viewController id="Pi1-P7-dXc" sceneMemberID="viewController">
+                <viewController id="Pi1-P7-dXc" customClass="MenuController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mjJ-BH-Nll"/>
                         <viewControllerLayoutGuide type="bottom" id="fLF-p9-aHM"/>
@@ -72,8 +72,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7M-3b-XnV" userLabel="storySelector">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7M-3b-XnV" userLabel="storySelector">
                                 <rect key="frame" x="0.0" y="226" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pGT-Ea-fmZ" id="06k-sj-dPR"/>
+                                    <outlet property="delegate" destination="pGT-Ea-fmZ" id="akc-qE-dpk"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLd-GH-Orh" userLabel="nameLabel">
                                 <rect key="frame" x="20" y="159" width="130" height="21"/>
@@ -83,20 +87,25 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W7M-3b-XnV" firstAttribute="centerY" secondItem="pGT-Ea-fmZ" secondAttribute="centerY" id="RIP-kk-rWi"/>
+                            <constraint firstItem="W7M-3b-XnV" firstAttribute="centerX" secondItem="pGT-Ea-fmZ" secondAttribute="centerX" id="bOU-Cx-XJA"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="Kwy-nd-IpJ" kind="show" id="P2P-om-kAe"/>
+                        <outlet property="characterPicker" destination="W7M-3b-XnV" id="idq-MS-VwJ"/>
+                        <segue destination="Kwy-nd-IpJ" kind="show" identifier="toStart" id="P2P-om-kAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVd-aL-P6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1364.5" y="339.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Controller-->
         <scene sceneID="zoF-Dn-3zU">
             <objects>
-                <viewController id="Kwy-nd-IpJ" sceneMemberID="viewController">
+                <viewController id="Kwy-nd-IpJ" customClass="StartController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Fr-KT-TeY"/>
                         <viewControllerLayoutGuide type="bottom" id="kkC-up-QnH"/>
@@ -117,17 +126,17 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="ywC-zN-L3Q" kind="show" id="ZAk-kN-Y8a"/>
+                        <segue destination="ywC-zN-L3Q" kind="show" identifier="toPlay" id="ZAk-kN-Y8a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jrm-Hw-OpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1802.5" y="339.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Controller-->
         <scene sceneID="1kP-vM-w2c">
             <objects>
-                <viewController id="ywC-zN-L3Q" sceneMemberID="viewController">
+                <viewController id="ywC-zN-L3Q" customClass="PlayController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H2Q-IT-kFR"/>
                         <viewControllerLayoutGuide type="bottom" id="GcX-dw-o7a"/>
@@ -178,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="2227.5" y="339.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Controller-->
         <scene sceneID="j0s-Ic-RxY">
             <objects>
-                <viewController id="HDg-H8-mDV" sceneMemberID="viewController">
+                <viewController id="HDg-H8-mDV" customClass="SettingsController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dfD-h2-gdv"/>
                         <viewControllerLayoutGuide type="bottom" id="WEz-ei-vVU"/>
