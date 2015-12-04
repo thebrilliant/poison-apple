@@ -11,6 +11,8 @@ import UIKit
 class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var characterPicker: UIPickerView!
+    @IBOutlet weak var storyTitle: UILabel!
+    @IBOutlet weak var playerName: UITextField!
     
     var pickerDataSource = ["White", "Red", "Green", "Blue"]
     
@@ -39,7 +41,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(row == 0) {
-            self.view.backgroundColor = UIColor.whiteColor();
+            self.view.backgroundColor = UIColor.init(red: 200, green: 0, blue: 150, alpha: 1)
         } else if(row == 1) {
             self.view.backgroundColor = UIColor.redColor();
         } else if(row == 2) {

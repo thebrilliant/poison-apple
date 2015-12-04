@@ -10,6 +10,9 @@ import UIKit
 
 class StartController: UIViewController {
 
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

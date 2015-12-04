@@ -8,8 +8,14 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var soundSwitch: UISwitch!
+    @IBOutlet weak var musicSwitch: UISwitch!
+    @IBOutlet weak var colorThemePicker: UIPickerView!
+    
+    var pickerDataSource = ["Basic", "Blood", "Decay", "Midnight"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +27,29 @@ class SettingsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerDataSource[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(row == 0) {
+            self.view.backgroundColor = UIColor.init(red: 200, green: 0, blue: 150, alpha: 1)
+        } else if(row == 1) {
+            self.view.backgroundColor = UIColor.redColor();
+        } else if(row == 2) {
+            self.view.backgroundColor =  UIColor.greenColor();
+        } else {
+            self.view.backgroundColor = UIColor.blueColor();
+        }
+    }
 
     /*
     // MARK: - Navigation

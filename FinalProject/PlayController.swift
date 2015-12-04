@@ -9,6 +9,13 @@
 import UIKit
 
 class PlayController: UIViewController {
+    
+    @IBOutlet weak var progressDisplay: UILabel!
+    @IBOutlet weak var storyImage: UIImageView!
+    @IBOutlet weak var storyText: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var option1: UIButton!
+    @IBOutlet weak var option2: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

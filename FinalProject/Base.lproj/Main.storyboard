@@ -95,6 +95,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="characterPicker" destination="W7M-3b-XnV" id="idq-MS-VwJ"/>
+                        <outlet property="playerName" destination="ZGX-cI-s9Z" id="M20-P1-IFU"/>
+                        <outlet property="storyTitle" destination="5TV-T1-Xya" id="Bhp-25-Ly0"/>
                         <segue destination="Kwy-nd-IpJ" kind="show" identifier="toStart" id="P2P-om-kAe"/>
                     </connections>
                 </viewController>
@@ -126,6 +128,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="startButton" destination="8Re-0I-ORB" id="V7m-aP-zwQ"/>
+                        <outlet property="startImage" destination="hLb-Nx-SYf" id="dcA-Tj-Ite"/>
                         <segue destination="ywC-zN-L3Q" kind="show" identifier="toPlay" id="ZAk-kN-Y8a"/>
                     </connections>
                 </viewController>
@@ -182,6 +186,14 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="option1" destination="Oda-di-FeX" id="eKw-aB-3Xk"/>
+                        <outlet property="option2" destination="OKm-jc-9Ng" id="KPJ-zS-hsK"/>
+                        <outlet property="progressDisplay" destination="3v8-XT-rDD" id="Qv8-Wp-4it"/>
+                        <outlet property="saveButton" destination="u56-Xj-0fe" id="m0f-3p-PHG"/>
+                        <outlet property="storyImage" destination="O4I-fk-JdR" id="Iio-pq-X60"/>
+                        <outlet property="storyText" destination="ais-t4-sfD" id="Zbd-Jw-pfB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7R-Zn-ApF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,10 +241,28 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-zA-n5m" userLabel="musicOnOff">
                                 <rect key="frame" x="306" y="221" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select App Theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKs-h0-Pdn">
+                                <rect key="frame" x="20" y="274" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgO-3L-jQg">
+                                <rect key="frame" x="0.0" y="303" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aj2-9h-kKQ" id="Ie6-zF-BFR"/>
+                                    <outlet property="delegate" destination="aj2-9h-kKQ" id="M4S-du-01Q"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="colorThemePicker" destination="LgO-3L-jQg" id="m3t-ZJ-LK1"/>
+                        <outlet property="musicSwitch" destination="4e4-zA-n5m" id="zeT-lX-qwq"/>
+                        <outlet property="soundSwitch" destination="h0v-5s-pWm" id="xDQ-Kf-SBs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cc-IE-4gA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
