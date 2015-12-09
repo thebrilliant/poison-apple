@@ -10,6 +10,14 @@ import UIKit
 
 class StartScreenController: UITableViewController {
 
+
+    @IBAction func settingsButton(sender: AnyObject) {
+        
+        performSegueWithIdentifier("toSettings", sender: self)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
