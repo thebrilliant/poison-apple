@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class StartScreenController: UITableViewController {
+    
+    let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "rapunzel"),UIImage(named: "sleeping-beauty"),UIImage(named: "red-riding-hood")]
 
 
     @IBAction func settingsButton(sender: AnyObject) {
@@ -48,9 +50,12 @@ class StartScreenController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StoryNames", forIndexPath: indexPath) as! StoryCell
-        cell.storyImage.image = UIImage(named: "snow-white-1")
+        cell.storyImage.image = self.storyImages[indexPath.row]
 
         return cell
+    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 65
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
