@@ -19,6 +19,7 @@
 		BE2FC2CF1C18E5D300EF903E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2FC2CE1C18E5D300EF903E /* Security.framework */; };
 		BE2FC2D11C18E5DA00EF903E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2FC2D01C18E5DA00EF903E /* CFNetwork.framework */; };
 		BE2FC2D51C18E89700EF903E /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2FC2D41C18E89700EF903E /* Firebase.framework */; settings = {ASSET_TAGS = (); }; };
+		BE65ECB81C1A7996002A0D9D /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65ECB71C1A7996002A0D9D /* NavViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EFCF04D01C0E91AE007BE6E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF04CF1C0E91AE007BE6E4 /* AppDelegate.swift */; };
 		EFCF04D21C0E91AE007BE6E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF04D11C0E91AE007BE6E4 /* ViewController.swift */; };
 		EFCF04D51C0E91AE007BE6E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCF04D31C0E91AE007BE6E4 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		BE2FC2CE1C18E5D300EF903E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BE2FC2D01C18E5DA00EF903E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BE2FC2D41C18E89700EF903E /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = FinalProject/Firebase.framework; sourceTree = "<group>"; };
+		BE65ECB71C1A7996002A0D9D /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		EFCF04CC1C0E91AE007BE6E4 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCF04CF1C0E91AE007BE6E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFCF04D11C0E91AE007BE6E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				EFCF04CF1C0E91AE007BE6E4 /* AppDelegate.swift */,
 				EFCF04D11C0E91AE007BE6E4 /* ViewController.swift */,
 				EFCF04D31C0E91AE007BE6E4 /* Main.storyboard */,
+				BE65ECB71C1A7996002A0D9D /* NavViewController.swift */,
 				EFCF04D61C0E91AE007BE6E4 /* Assets.xcassets */,
 				EFCF04D81C0E91AE007BE6E4 /* LaunchScreen.storyboard */,
 				9DF7D1E41C113DC400859B7D /* SettingsController.swift */,
@@ -305,6 +308,7 @@
 				9DF7D1E91C113DC400859B7D /* SettingsController.swift in Sources */,
 				9DF7D1ED1C113DC400859B7D /* MenuController.swift in Sources */,
 				EFCF04D21C0E91AE007BE6E4 /* ViewController.swift in Sources */,
+				BE65ECB81C1A7996002A0D9D /* NavViewController.swift in Sources */,
 				9DF7D1EA1C113DC400859B7D /* StartController.swift in Sources */,
 				EFCF04D01C0E91AE007BE6E4 /* AppDelegate.swift in Sources */,
 				9DF7D1EB1C113DC400859B7D /* PlayController.swift in Sources */,
@@ -453,6 +457,7 @@
 					"$(PROJECT_DIR)/FinalProject",
 				);
 				INFOPLIST_FILE = FinalProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.derryc09.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,6 +473,7 @@
 					"$(PROJECT_DIR)/FinalProject",
 				);
 				INFOPLIST_FILE = FinalProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.derryc09.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,7 +485,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = FinalProjectTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.derryc09.FinalProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -492,7 +498,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = FinalProjectTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.derryc09.FinalProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,37 +1,37 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++BBE3E0A",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++1558347",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "23E8631171885D1B65B764AF8165DD649B745A15+++0C036AB" : 0,
-    "23E8631171885D1B65B764AF8165DD649B745A15+++67DFBDE" : 0,
-    "23E8631171885D1B65B764AF8165DD649B745A15+++BBE3E0A" : 0
+    "23E8631171885D1B65B764AF8165DD649B745A15+++BBC142A" : 0,
+    "23E8631171885D1B65B764AF8165DD649B745A15+++1558347" : 0,
+    "23E8631171885D1B65B764AF8165DD649B745A15+++4C79941" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "98EA15FC-34B4-4E36-A7A5-C8C4067D4A17",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "23E8631171885D1B65B764AF8165DD649B745A15+++0C036AB" : "",
-    "23E8631171885D1B65B764AF8165DD649B745A15+++67DFBDE" : "",
-    "23E8631171885D1B65B764AF8165DD649B745A15+++BBE3E0A" : "poison-apple\/"
+    "23E8631171885D1B65B764AF8165DD649B745A15+++BBC142A" : "",
+    "23E8631171885D1B65B764AF8165DD649B745A15+++1558347" : "poison-apple\/",
+    "23E8631171885D1B65B764AF8165DD649B745A15+++4C79941" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "FinalProject",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FinalProject.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thebrilliant\/poison-apple",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++0C036AB"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thebrilliant\/poison-apple",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++67DFBDE"
-    },
-    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thebrilliant\/poison-apple.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++BBE3E0A"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++1558347"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thebrilliant\/poison-apple",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++4C79941"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thebrilliant\/poison-apple",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23E8631171885D1B65B764AF8165DD649B745A15+++BBC142A"
     }
   ]
 }
