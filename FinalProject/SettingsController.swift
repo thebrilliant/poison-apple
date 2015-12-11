@@ -18,7 +18,8 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.colorThemePicker.dataSource = self
+        self.colorThemePicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
