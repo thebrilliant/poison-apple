@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlayController: UIViewController {
     
@@ -16,12 +17,14 @@ class PlayController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var option1: UIButton!
     @IBOutlet weak var option2: UIButton!
-
+    
+    var BackgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kpws", ofType: "mp3")!))
+    
     var appTheme : UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        BackgroundAudio!.play()
         // Do any additional setup after loading the view.
     }
 
