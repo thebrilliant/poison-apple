@@ -15,7 +15,8 @@ class StartController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        startImage.image = UIImage(named: "apple-cube")
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +25,9 @@ class StartController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func startPressed(sender: AnyObject) {
+        performSegueWithIdentifier("toPlay", sender: self)
+    }
 
     /*
     // MARK: - Navigation

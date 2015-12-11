@@ -21,6 +21,10 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.characterPicker.dataSource = self
         self.characterPicker.delegate = self
     }
+    
+    @IBAction func moveToStart(sender: AnyObject) {
+        performSegueWithIdentifier("toStart", sender: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
