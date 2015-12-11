@@ -13,6 +13,8 @@ class StartController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var startImage: UIImageView!
     
+    var appTheme : UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,18 @@ class StartController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        setBackground()
+    }
+    
+    func setBackground() {
+        //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
+        let navCont = self.navigationController as! NavViewController
+        self.appTheme = navCont.appTheme
+        self.view.backgroundColor = self.appTheme
+        print("\(navCont.appTheme) derry derry 1234")
     }
     
     @IBAction func startPressed(sender: AnyObject) {

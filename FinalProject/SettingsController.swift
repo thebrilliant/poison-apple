@@ -30,6 +30,17 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        setBackground()
+    }
+    
+    func setBackground() {
+        let navCont = self.navigationController as! NavViewController
+        self.appTheme = navCont.appTheme
+        self.view.backgroundColor = self.appTheme
+        print("\(navCont.appTheme) derry derry 1234")
+    }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }

@@ -34,6 +34,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func viewWillAppear(animated: Bool) {
         setBackground()
     }
+    
     func setBackground() {
         //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
         let navCont = self.navigationController as! NavViewController
