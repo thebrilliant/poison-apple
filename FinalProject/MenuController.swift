@@ -15,6 +15,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var playerName: UITextField!
     
     var pickerDataSource = ["White", "Red", "Green", "Blue"]
+    var appTheme : UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,16 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewWillAppear(animated: Bool) {
+        setBackground()
+    }
+    func setBackground() {
+        //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
+        let navCont = self.navigationController as! NavViewController
+        self.appTheme = navCont.appTheme
+        self.view.backgroundColor = self.appTheme
+        print("\(navCont.appTheme) derry derry 1234")
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

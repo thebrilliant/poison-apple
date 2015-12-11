@@ -14,7 +14,9 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var musicSwitch: UISwitch!
     @IBOutlet weak var colorThemePicker: UIPickerView!
     
-    var pickerDataSource = ["Basic", "Blood", "Decay", "Midnight"]
+    var appTheme : UIColor!
+    
+    var pickerDataSource = ["Basic", "Blood"/*, "Decay", "Midnight"*/]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +43,24 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
         if(row == 0) {
-            self.view.backgroundColor = UIColor.init(red: 200, green: 0, blue: 150, alpha: 1)
+            self.view.backgroundColor = UIColor.whiteColor()
+            appTheme = UIColor.whiteColor()
         } else if(row == 1) {
-            self.view.backgroundColor = UIColor.redColor();
+            self.view.backgroundColor = UIColor.init(hue: 11, saturation: 94, brightness: 63, alpha: 0.8)
+            appTheme = UIColor.init(hue: 11, saturation: 94, brightness: 63, alpha: 0.8)
         } else if(row == 2) {
-            self.view.backgroundColor =  UIColor.greenColor();
+            //self.view.backgroundColor = UIColor.greenColor()
+            self.view.backgroundColor =  UIColor.init(red: 98, green: 194, blue: 25, alpha: 0.8)
+            appTheme = UIColor.init(red: 98, green: 194, blue: 25, alpha: 0.8)
+            //appTheme = UIColor.init(hue: 94, saturation: 87, brightness: 76, alpha: 1)
         } else {
-            self.view.backgroundColor = UIColor.blueColor();
+            self.view.backgroundColor = UIColor.init(hue: 242, saturation: 96, brightness: 39, alpha: 0.8)
+            appTheme = UIColor.init(hue: 242, saturation: 96, brightness: 39, alpha: 0.8)
         }
+        navController.appTheme = self.appTheme
+        print(navController.appTheme)
     }
 
     /*

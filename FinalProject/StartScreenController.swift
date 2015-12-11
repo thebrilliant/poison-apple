@@ -12,6 +12,8 @@ import Firebase
 class StartScreenController: UITableViewController {
     
     let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "rapunzel"),UIImage(named: "sleeping-beauty"),UIImage(named: "red-riding-hood")]
+    
+    var appTheme : UIColor!
 
 
     @IBAction func settingsButton(sender: AnyObject) {
@@ -23,12 +25,22 @@ class StartScreenController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setBackground()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    override func viewWillAppear(animated: Bool) {
+        setBackground()
+    }
+    func setBackground() {
+        //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
+        let navCont = self.navigationController as! NavViewController
+        self.appTheme = navCont.appTheme
+        self.view.backgroundColor = self.appTheme
+        print("\(navCont.appTheme) derry derry 1234")
     }
 
     override func didReceiveMemoryWarning() {

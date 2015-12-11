@@ -9,6 +9,7 @@
 import UIKit
 
 class NavViewController: UINavigationController {
+    var appTheme : UIColor = UIColor.whiteColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
