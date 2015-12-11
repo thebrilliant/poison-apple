@@ -1,0 +1,16 @@
+Once upon a time in the forest, there was a little girl named [name].
+[name] has a grandma that lives in a cottage on the other side of the woods.
+[name]'s mother has asked you to deliver a basket of fresh bread to her.
+    choice 1: reject
+        Grounded for a month
+        END
+    choice 2: accept
+        NEXT
+
+You walk outside the cottage with the basket and see two paths.
+One to leading through the heart of the forest, the other leading to the side.
+    choice 1: take path through forest
+        NEXT
+    choice 2: take path around forest
+        Titan comes waddling from across the open land and picks you up and bites off your head
+        END
