@@ -11,7 +11,7 @@ import Firebase
 
 class StartScreenController: UITableViewController {
     
-    let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "Rapunzel"),UIImage(named: "sleeping-beauty"), UIImage(named: "red-riding-hood"), UIImage(named: "coming-soon"), UIImage(named: "alice"), UIImage(named: "ariel"), UIImage(named: "cinderella"), UIImage(named: "peter-pan"), UIImage(named: "jack-giant")]
+    let storyImages = [UIImage(named: "snow-white"), UIImage(named: "red-riding-hood"), UIImage(named: "coming-soon"), UIImage(named: "hansel-and-gretel"), UIImage(named: "Rapunzel"), UIImage(named: "sleeping-beauty"), UIImage(named: "alice"), UIImage(named: "ariel"), UIImage(named: "cinderella"), UIImage(named: "peter-pan"), UIImage(named: "jack-giant")]
     
     var appTheme : UIColor!
 
@@ -73,7 +73,7 @@ class StartScreenController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
-        case 0,1,2,3,4:
+        case 0,1:
             performSegueWithIdentifier("toMenu", sender: self)
         default:
             print("coming soon")

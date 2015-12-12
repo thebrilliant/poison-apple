@@ -84,16 +84,8 @@
                                 <rect key="frame" x="20" y="188" width="335" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7M-3b-XnV" userLabel="storySelector">
-                                <rect key="frame" x="0.0" y="226" width="375" height="216"/>
-                                <animations/>
-                                <connections>
-                                    <outlet property="dataSource" destination="pGT-Ea-fmZ" id="06k-sj-dPR"/>
-                                    <outlet property="delegate" destination="pGT-Ea-fmZ" id="akc-qE-dpk"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLd-GH-Orh" userLabel="nameLabel">
                                 <rect key="frame" x="20" y="159" width="130" height="21"/>
                                 <animations/>
@@ -113,6 +105,14 @@
                                 <rect key="frame" x="316" y="26" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7M-3b-XnV" userLabel="storySelector">
+                                <rect key="frame" x="0.0" y="226" width="375" height="216"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pGT-Ea-fmZ" id="06k-sj-dPR"/>
+                                    <outlet property="delegate" destination="pGT-Ea-fmZ" id="akc-qE-dpk"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
