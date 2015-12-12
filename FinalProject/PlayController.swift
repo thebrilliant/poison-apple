@@ -18,13 +18,22 @@ class PlayController: UIViewController {
     @IBOutlet weak var option1: UIButton!
     @IBOutlet weak var option2: UIButton!
     
-    var BackgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kpws", ofType: "mp3")!))
+    /*//var sourcePath = NSBundle.mainBundle().pathForResource("kpws", ofType: "mp3")!
+    var sourcePath = NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")
+    var filePath : NSURL = NSURL(string: "music/kwps.mp3", relativeToURL: NSURL(string: NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")!))!
+    
+    var audio = try? AVAudioPlayer(contentsOfURL: NSURL(string: "music/kwps.mp3", relativeToURL: nil)!, fileTypeHint: "mp3")
+    
+    //var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kpws", ofType: "mp3")!))
+    */
     
     var appTheme : UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        BackgroundAudio!.play()
+        /*print("source path: \(sourcePath)")
+        print("file path: \(filePath)")
+        audio!.play()*/
         // Do any additional setup after loading the view.
     }
 

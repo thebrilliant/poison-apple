@@ -9,12 +9,13 @@
 import UIKit
 
 class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
     @IBOutlet weak var characterPicker: UIPickerView!
     @IBOutlet weak var storyTitle: UILabel!
     @IBOutlet weak var playerName: UITextField!
     
     var pickerDataSource = ["White", "Red", "Green", "Blue"]
+    var imagesSource = [UIImage(named: "poison_apple1"), UIImage(named: "poison_apple1"), UIImage(named: "poison_apple1"), UIImage(named: "poison_apple1")]
     var appTheme : UIColor!
     
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func moveToStart(sender: AnyObject) {
         performSegueWithIdentifier("toStart", sender: self)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,7 +49,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSource.count;
+        return imagesSource.count;
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
@@ -67,14 +68,51 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
+    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 120
+    }
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
+        
+        var myView = UIView(frame: CGRectMake(0, 0, pickerView.bounds.width - 30, 120))
+        
+        var myImageView = UIImageView(frame: CGRectMake(0, 0, 290, 120))
+        
+        var rowString = String()
+        switch row {
+        case 0:
+            //rowString = “Washington”
+            myImageView.image = imagesSource[row]
+        case 1:
+            //rowString = “Beijing”
+            myImageView.image = imagesSource[row]
+        case 2:
+            myImageView.image = imagesSource[row]
+        case 3:
+            myImageView.image = imagesSource[row]
+        default:
+            rowString = "Error: too many rows"
+            myImageView.image = nil
+        }
+        //let myLabel = UILabel(frame: CGRectMake(60, 0, pickerView.bounds.width - 90, 60 ))
+        //myLabel.font = UIFont(name:some font, size: 18)
+        //myLabel.text = rowString
+        
+        //myView.addSubview(myLabel)
+        myView.addSubview(myImageView)
+        
+        return myView
+    }
+    
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
