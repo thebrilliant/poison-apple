@@ -10,7 +10,7 @@ import UIKit
 
 class NavViewController: UINavigationController {
     var appTheme : UIColor = UIColor.whiteColor()
-
+    var playerName : String = String()
     override func viewDidLoad() {
         super.viewDidLoad()
 

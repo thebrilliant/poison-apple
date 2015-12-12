@@ -17,7 +17,8 @@ class StartController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let navCont = self.navigationController as! NavViewController
+        print(navCont.playerName)
         startImage.image = UIImage(named: "apple-cube")
         // Do any additional setup after loading the view.
     }

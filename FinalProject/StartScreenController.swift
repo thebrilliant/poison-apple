@@ -72,7 +72,12 @@ class StartScreenController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("toMenu", sender: self)
+        switch indexPath.row {
+        case 0,1,2,3,4:
+            performSegueWithIdentifier("toMenu", sender: self)
+        default:
+            print("coming soon")
+        }
     }
     
     /*

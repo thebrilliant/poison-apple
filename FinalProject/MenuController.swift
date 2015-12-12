@@ -25,6 +25,9 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBAction func moveToStart(sender: AnyObject) {
+        let navCont = self.navigationController as! NavViewController
+        navCont.playerName = playerName.text!
+        
         performSegueWithIdentifier("toStart", sender: self)
     }
     
