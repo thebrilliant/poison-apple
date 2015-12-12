@@ -22,6 +22,9 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
         super.viewDidLoad()
         self.colorThemePicker.dataSource = self
         self.colorThemePicker.delegate = self
+        
+        let navController = self.navigationController as! NavViewController
+        colorThemePicker.selectRow(navController.appThemeName, inComponent: 0, animated: true)
         // Do any additional setup after loading the view.
     }
 
@@ -70,6 +73,7 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
             self.view.backgroundColor = UIColor.init(hue: 242, saturation: 96, brightness: 39, alpha: 0.8)
             appTheme = UIColor.init(hue: 242, saturation: 96, brightness: 39, alpha: 0.8)
         }
+        navController.appThemeName = row
         navController.appTheme = self.appTheme
         print(navController.appTheme)
     }
