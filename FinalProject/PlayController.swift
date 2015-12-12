@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class PlayController: UIViewController {
     
@@ -24,8 +23,6 @@ class PlayController: UIViewController {
 //    
 //    var audio = try? AVAudioPlayer(contentsOfURL: NSURL(string: "music/kwps.mp3", relativeToURL: nil)!, fileTypeHint: "mp3")
     
-    var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")!))
-
     
     var appTheme : UIColor!
     
@@ -33,8 +30,10 @@ class PlayController: UIViewController {
         super.viewDidLoad()
         /*print("source path: \(sourcePath)")
         print("file path: \(filePath)")*/
-        backgroundAudio!.play()
+        
         // Do any additional setup after loading the view.
+        let navCont = self.navigationController as! NavViewController
+        navCont.backgroundAudio!.play()
     }
 
     override func didReceiveMemoryWarning() {

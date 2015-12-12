@@ -37,6 +37,16 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
         setBackground()
     }
     
+    @IBAction func musicSwitchTapped(sender: AnyObject) {
+        if(!musicSwitch.on) {
+            let navCont = self.navigationController as! NavViewController
+            navCont.backgroundAudio!.stop()
+        } else {
+            let navCont = self.navigationController as! NavViewController
+            navCont.backgroundAudio!.play()
+        }
+    }
+    
     func setBackground() {
         let navCont = self.navigationController as! NavViewController
         self.appTheme = navCont.appTheme

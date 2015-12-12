@@ -36,6 +36,7 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="storyImage" destination="zIp-Jc-WsC" id="ZVF-6h-irA"/>
+                                    <segue destination="Pi1-P7-dXc" kind="show" identifier="toMenu" id="iRf-kj-Hja"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,7 +54,6 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="Pi1-P7-dXc" kind="show" identifier="toMenu" id="H4p-86-BGG"/>
                         <segue destination="HDg-H8-mDV" kind="show" identifier="toSettings" id="3B5-95-mdg"/>
                     </connections>
                 </tableViewController>
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVd-aL-P6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364.5" y="339.5"/>
+            <point key="canvasLocation" x="1406.5" y="339.5"/>
         </scene>
         <!--Start Controller-->
         <scene sceneID="zoF-Dn-3zU">
@@ -182,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="1802.5" y="339.5"/>
         </scene>
-        <!--Play Controller-->
+        <!--Title-->
         <scene sceneID="1kP-vM-w2c">
             <objects>
                 <viewController id="ywC-zN-L3Q" customClass="PlayController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,6 +237,13 @@
                             <constraint firstItem="O4I-fk-JdR" firstAttribute="top" secondItem="H2Q-IT-kFR" secondAttribute="bottom" id="vVE-u1-h9d"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="d7F-Sa-O4B">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="7QK-u6-NDZ">
+                            <connections>
+                                <segue destination="HDg-H8-mDV" kind="show" id="q2Z-Uf-86Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="option1" destination="Oda-di-FeX" id="eKw-aB-3Xk"/>
@@ -296,8 +303,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-zA-n5m" userLabel="musicOnOff">
-                                <rect key="frame" x="306" y="221" width="51" height="31"/>
+                                <rect key="frame" x="305" y="221" width="51" height="31"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="musicSwitchTapped:" destination="HDg-H8-mDV" eventType="valueChanged" id="4HK-5m-nOp"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select App Theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKs-h0-Pdn">
                                 <rect key="frame" x="20" y="274" width="146" height="21"/>
@@ -327,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cc-IE-4gA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956.5" y="1134.5"/>
+            <point key="canvasLocation" x="1446.5" y="1313.5"/>
         </scene>
         <!--Nav View Controller-->
         <scene sceneID="jHx-Z1-Fdv">
@@ -351,6 +361,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uAu-11-6TB"/>
+        <segue reference="3B5-95-mdg"/>
     </inferredMetricsTieBreakers>
 </document>

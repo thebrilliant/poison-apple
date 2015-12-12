@@ -11,6 +11,7 @@ import UIKit
 class StoryCell: UITableViewCell {
     
     @IBOutlet weak var storyImage: UIImageView!
+    var storyTitle = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

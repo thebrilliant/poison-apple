@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
+
+struct images {
+    var snowWhite : [UIImage]
+    var redRidingHood : [UIImage]
+}
 
 class NavViewController: UINavigationController {
     var appTheme : UIColor = UIColor.whiteColor()
     var appThemeName = 0
     var playerName : String = String()
+    var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")!))
+    var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

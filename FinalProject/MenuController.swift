@@ -14,14 +14,19 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var storyTitle: UILabel!
     @IBOutlet weak var playerName: UITextField!
     
+    var currentStory = ""
     var pickerDataSource = ["White", "Red", "Green", "Blue"]
-    var imagesSource = [UIImage(named: "poison_apple1"), UIImage(named: "poison_apple1"), UIImage(named: "poison_apple1"), UIImage(named: "poison_apple1")]
+    var imagesSource = [UIImage]()
     var appTheme : UIColor!
-    
+      
     override func viewDidLoad() {
         super.viewDidLoad()
         self.characterPicker.dataSource = self
         self.characterPicker.delegate = self
+        
+        let navCont = self.navigationController as! NavViewController
+        navCont.backgroundAudio!.stop()
+        imagesSource = navCont.imagesSource.snowWhite
     }
     
     @IBAction func toSettings(sender: AnyObject) {

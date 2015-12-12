@@ -11,17 +11,13 @@ import Firebase
 
 class StartScreenController: UITableViewController {
     
-    let storyImages = [UIImage(named: "snow-white"), UIImage(named: "red-riding-hood"), UIImage(named: "coming-soon"), UIImage(named: "hansel-and-gretel"), UIImage(named: "Rapunzel"), UIImage(named: "sleeping-beauty"), UIImage(named: "alice"), UIImage(named: "ariel"), UIImage(named: "cinderella"), UIImage(named: "peter-pan"), UIImage(named: "jack-giant")]
-    
+    let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "Rapunzel"),UIImage(named: "sleeping-beauty"), UIImage(named: "red-riding-hood"), UIImage(named: "coming-soon"), UIImage(named: "alice"), UIImage(named: "ariel"), UIImage(named: "cinderella"), UIImage(named: "peter-pan"), UIImage(named: "jack-giant")]
+    let storyNames = ["Snow White","Hansel and Gretel","Rapunzel","Sleeping Beauty","Red Riding Hood","Alice","Ariel","Cinderella", "Peter-pan","jack-giant","coming-soon"]
     var appTheme : UIColor!
 
-
     @IBAction func settingsButton(sender: AnyObject) {
-        
         performSegueWithIdentifier("toSettings", sender: self)
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +27,8 @@ class StartScreenController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let navCont = self.navigationController as! NavViewController
+        navCont.backgroundAudio!.stop()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,6 +62,7 @@ class StartScreenController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StoryNames", forIndexPath: indexPath) as! StoryCell
         cell.storyImage.image = self.storyImages[indexPath.row]
+        cell.storyTitle = self.storyNames[indexPath.row]
 
         return cell
     }
@@ -72,11 +71,34 @@ class StartScreenController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.row {
-        case 0,1:
-            performSegueWithIdentifier("toMenu", sender: self)
-        default:
-            print("coming soon")
+//        switch indexPath.row {
+//        case 0,1:
+//            performSegueWithIdentifier("toMenu", sender: self)
+//        default:
+//            print("coming soon")
+//        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toMenu" {
+            let cell = sender as! StoryCell
+            let menuController = segue.destinationViewController as! MenuController
+            switch cell.storyTitle {
+            case storyNames[0]:
+                menuController.currentStory = storyNames[0]
+                menuController.navigationItem.title = storyNames[0]
+            case storyNames[1]:
+                menuController.currentStory = storyNames[1]
+                menuController.navigationItem.title = storyNames[1]
+            case storyNames[2]:
+                menuController.currentStory = storyNames[2]
+                menuController.navigationItem.title = storyNames[2]
+            case storyNames[3]:
+                menuController.currentStory = storyNames[3]
+                menuController.navigationItem.title = storyNames[3]
+            default :
+                break
+            }
         }
     }
     
