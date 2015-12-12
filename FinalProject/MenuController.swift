@@ -24,6 +24,10 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.characterPicker.delegate = self
     }
     
+    @IBAction func toSettings(sender: AnyObject) {
+        performSegueWithIdentifier("Settings", sender: self)
+    }
+    
     @IBAction func moveToStart(sender: AnyObject) {
         let navCont = self.navigationController as! NavViewController
         navCont.playerName = playerName.text!

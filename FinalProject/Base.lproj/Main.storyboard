@@ -61,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="956.5" y="339.5"/>
         </scene>
-        <!--Menu Controller-->
+        <!--Choose!-->
         <scene sceneID="mtF-7q-npG">
             <objects>
                 <viewController id="Pi1-P7-dXc" customClass="MenuController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,6 +121,14 @@
                             <constraint firstItem="W7M-3b-XnV" firstAttribute="centerX" secondItem="pGT-Ea-fmZ" secondAttribute="centerX" id="bOU-Cx-XJA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Choose!" id="rex-Is-JQB">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="WBc-9b-9eQ">
+                            <connections>
+                                <action selector="toSettings:" destination="Pi1-P7-dXc" id="zrJ-Up-1ym"/>
+                                <segue destination="HDg-H8-mDV" kind="show" identifier="Settings" id="uAu-11-6TB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="characterPicker" destination="W7M-3b-XnV" id="idq-MS-VwJ"/>
@@ -342,4 +350,7 @@
             <point key="canvasLocation" x="510.5" y="339.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uAu-11-6TB"/>
+    </inferredMetricsTieBreakers>
 </document>

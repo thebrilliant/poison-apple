@@ -11,7 +11,7 @@ import Firebase
 
 class StartScreenController: UITableViewController {
     
-    let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "Rapunzel"),UIImage(named: "sleeping-beauty"),UIImage(named: "red-riding-hood"), UIImage(named: "coming-soon")]
+    let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "Rapunzel"),UIImage(named: "sleeping-beauty"), UIImage(named: "red-riding-hood"), UIImage(named: "coming-soon"), UIImage(named: "alice"), UIImage(named: "ariel"), UIImage(named: "cinderella"), UIImage(named: "peter-pan"), UIImage(named: "jack-giant")]
     
     var appTheme : UIColor!
 
