@@ -11,7 +11,7 @@ import Firebase
 
 class StartScreenController: UITableViewController {
     
-    let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "rapunzel"),UIImage(named: "sleeping-beauty"),UIImage(named: "red-riding-hood")]
+    let storyImages = [UIImage(named: "snow-white"),UIImage(named: "hansel-and-gretel"),UIImage(named: "Rapunzel"),UIImage(named: "sleeping-beauty"),UIImage(named: "red-riding-hood"), UIImage(named: "coming-soon")]
     
     var appTheme : UIColor!
 
@@ -58,7 +58,7 @@ class StartScreenController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return storyImages.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
