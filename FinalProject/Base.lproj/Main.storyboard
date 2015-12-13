@@ -36,7 +36,6 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="storyImage" destination="zIp-Jc-WsC" id="ZVF-6h-irA"/>
-                                    <segue destination="Pi1-P7-dXc" kind="show" identifier="toMenu" id="iRf-kj-Hja"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,6 +54,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="HDg-H8-mDV" kind="show" identifier="toSettings" id="3B5-95-mdg"/>
+                        <segue destination="Pi1-P7-dXc" kind="show" identifier="toMenu" id="tum-v5-pt3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7Z-if-ZJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
