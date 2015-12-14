@@ -1,0 +1,19 @@
+Once upon a time in a castle far, far away, there was a princess named [name].
+[name] has a step mother that loves being the most beautiful in all the land.
+When [name] grows up, [name] becomes the most beautiful in all the land.
+The Queen then banishes [name] and orders a huntsman to kill [name].
+    choice 1: run into the woods
+    choice 2: cry for mercy
+
+You run into the deadly dark woods where you trip, hit your head on a rock and are taken off by a carnivorous animal.
+    choice 1: main menu
+    choice 2: replay
+
+The huntsman sees you sobbing and takes pity, letting you run into the woods.
+While running away, you come across a small cottage.
+    choice 1: stay away
+    choice 2: go in
+
+You stay in the forest as it starts to get dark and cold, slowly freezing to death.
+    choice 1: main menu
+    choice 2: replay
