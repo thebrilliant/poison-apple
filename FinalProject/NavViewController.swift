@@ -11,9 +11,10 @@ import AVFoundation
 import Firebase
 
 struct images {
-    var snowWhite : [UIImage]
-    var redRidingHood : [UIImage]
+    var snowWhite : [UIImage] = []
+    var redRidingHood : [UIImage] = []
 }
+
 
 class NavViewController: UINavigationController {
     var appTheme : UIColor = UIColor.whiteColor()
@@ -22,8 +23,8 @@ class NavViewController: UINavigationController {
     var items = [NSDictionary]()
     var myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
     var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")!))
-    var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!])
-    
+    var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "little-red")!, UIImage(named: "wolfie")!])
+
     override func viewDidLoad() {
         super.viewDidLoad()
             myRootRef.observeEventType(.Value, withBlock: { snapshot in

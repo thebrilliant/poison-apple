@@ -26,7 +26,11 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let navCont = self.navigationController as! NavViewController
         navCont.backgroundAudio!.stop()
-        imagesSource = navCont.imagesSource.snowWhite
+        if(currentStory == "Snow White") {
+            imagesSource = navCont.imagesSource.snowWhite
+        } else {
+            imagesSource = navCont.imagesSource.redRidingHood
+        }
     }
     
     @IBAction func toSettings(sender: AnyObject) {
