@@ -36,6 +36,7 @@ class StartController: UIViewController {
         //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
         let navCont = self.navigationController as! NavViewController
         self.appTheme = navCont.appTheme
+        
         self.view.backgroundColor = self.appTheme
         print("\(navCont.appTheme) derry derry 1234")
     }

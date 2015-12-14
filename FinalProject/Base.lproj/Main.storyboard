@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ea2-EC-1Ai">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ea2-EC-1Ai">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,10 +16,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryNames" id="TYF-8w-Y4D" customClass="StoryCell" customModule="FinalProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYF-8w-Y4D" id="kgi-H4-UbJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIp-Jc-WsC">
@@ -201,41 +200,48 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O4I-fk-JdR" userLabel="storyImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O4I-fk-JdR" userLabel="storyImage">
                                 <rect key="frame" x="0.0" y="99" width="375" height="277"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ais-t4-sfD" userLabel="storyText">
-                                <rect key="frame" x="20" y="384" width="335" height="94"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ais-t4-sfD" userLabel="storyText">
+                                <rect key="frame" x="26" y="146" width="335" height="218"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-di-FeX" userLabel="option1">
-                                <rect key="frame" x="26" y="486" width="34" height="30"/>
+                                <rect key="frame" x="20" y="500" width="335" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="ywC-zN-L3Q" kind="show" identifier="back" id="TdH-aL-PyL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKm-jc-9Ng" userLabel="option2">
-                                <rect key="frame" x="316" y="486" width="32" height="30"/>
+                                <rect key="frame" x="20" y="538" width="335" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="ywC-zN-L3Q" kind="show" identifier="next" id="8Yu-Vh-eWR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u56-Xj-0fe" userLabel="saveButton">
-                                <rect key="frame" x="170" y="486" width="34" height="30"/>
+                                <rect key="frame" x="327" y="66" width="34" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Save"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-Io-5jb">
+                                <rect key="frame" x="149" y="500" width="76" height="30"/>
+                                <state key="normal" title="Main Menu"/>
+                                <connections>
+                                    <segue destination="anK-oA-vig" kind="show" identifier="main" id="Ow2-3d-WT2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="O4I-fk-JdR" secondAttribute="trailing" id="KE7-rY-e5W"/>
-                            <constraint firstItem="O4I-fk-JdR" firstAttribute="leading" secondItem="MFC-H7-jIM" secondAttribute="leadingMargin" id="mEA-rZ-w8S"/>
-                            <constraint firstItem="ais-t4-sfD" firstAttribute="centerX" secondItem="MFC-H7-jIM" secondAttribute="centerXWithinMargins" id="oR5-qe-PVK"/>
-                            <constraint firstItem="O4I-fk-JdR" firstAttribute="top" secondItem="H2Q-IT-kFR" secondAttribute="bottom" id="vVE-u1-h9d"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="d7F-Sa-O4B">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="7QK-u6-NDZ">
@@ -246,6 +252,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="mainMenu" destination="pMu-Io-5jb" id="Nqp-ss-65A"/>
                         <outlet property="option1" destination="Oda-di-FeX" id="eKw-aB-3Xk"/>
                         <outlet property="option2" destination="OKm-jc-9Ng" id="KPJ-zS-hsK"/>
                         <outlet property="progressDisplay" destination="3v8-XT-rDD" id="Qv8-Wp-4it"/>
@@ -361,6 +368,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Ow2-3d-WT2"/>
+        <segue reference="ZAk-kN-Y8a"/>
         <segue reference="q2Z-Uf-86Z"/>
     </inferredMetricsTieBreakers>
 </document>
