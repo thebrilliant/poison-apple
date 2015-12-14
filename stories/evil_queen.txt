@@ -1,0 +1,10 @@
+Once upon a time in a castle far, far away, there was a queen named [name].
+[name] is the most beautiful in all the land, until [name]'s stepdaughter grows up.
+    choice 1: do nothing 
+    choice 2: banish child
+
+Your stepchild grows up and becomes the most beautiful queen.
+The attention gained by her depresses you and on her birthday, you take your own life.
+    choice 1: main menu
+    choice 2: replay
+
