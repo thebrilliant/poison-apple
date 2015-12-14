@@ -14,7 +14,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var storyTitle: UILabel!
     @IBOutlet weak var playerName: UITextField!
     
-    var currentStory = ""
+    var currentStory : String?
     var pickerDataSource = ["White", "Red", "Green", "Blue"]
     var imagesSource = [UIImage]()
     var appTheme : UIColor!
@@ -28,9 +28,12 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         navCont.backgroundAudio!.stop()
         if(currentStory == "Snow White") {
             imagesSource = navCont.imagesSource.snowWhite
+            navCont.characterIndex = 2
         } else {
             imagesSource = navCont.imagesSource.redRidingHood
+            navCont.characterIndex = 4
         }
+        
     }
     
     @IBAction func toSettings(sender: AnyObject) {
@@ -73,15 +76,30 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if(row == 0) {
-            self.view.backgroundColor = UIColor.init(red: 200, green: 0, blue: 150, alpha: 1)
-        } else if(row == 1) {
-            self.view.backgroundColor = UIColor.redColor();
-        } else if(row == 2) {
-            self.view.backgroundColor =  UIColor.greenColor();
+        let navCont = self.navigationController as! NavViewController
+        
+        if(currentStory == "Snow White"){
+            if(row == 0) {
+                navCont.characterIndex = 2
+            } else {
+                navCont.characterIndex = 1
+            }
         } else {
-            self.view.backgroundColor = UIColor.blueColor();
+            if(row == 0) {
+                navCont.characterIndex = 4
+            } else {
+                navCont.characterIndex = 3
+            }
         }
+//        if(row == 0) {
+//            self.view.backgroundColor = UIColor.init(red: 200, green: 0, blue: 150, alpha: 1)
+//        } else if(row == 1) {
+//            self.view.backgroundColor = UIColor.redColor();
+//        } else if(row == 2) {
+//            self.view.backgroundColor =  UIColor.greenColor();
+//        } else {
+//            self.view.backgroundColor = UIColor.blueColor();
+//        }
     }
     
     func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

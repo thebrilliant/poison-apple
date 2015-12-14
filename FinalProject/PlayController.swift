@@ -42,7 +42,7 @@ class PlayController: UIViewController {
     func typeLetter(){
         if myCounter < myText.count {
             storyText.text = storyText.text! + String(myText[myCounter])
-            let randomInterval = Double((arc4random_uniform(8)+1))/70
+            let randomInterval = Double((arc4random_uniform(8)+1))/150
             timer?.invalidate()
             timer = NSTimer.scheduledTimerWithTimeInterval(randomInterval, target: self, selector: "typeLetter", userInfo: nil, repeats: false)
         } else {
@@ -60,6 +60,10 @@ class PlayController: UIViewController {
         print("file path: \(filePath)")*/
         
         mainMenu.hidden = true
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Main Menu", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
         
         // Do any additional setup after loading the view.
         let navCont = self.navigationController as! NavViewController
@@ -67,7 +71,7 @@ class PlayController: UIViewController {
         navCont.backgroundAudio!.play()
         
         var foo = [String:AnyObject]()
-        foo = navCont.items[1]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
+        foo = navCont.items[navCont.characterIndex]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
         var text = foo["Text"] as? String
         fireTimer()
         text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
@@ -93,7 +97,10 @@ class PlayController: UIViewController {
         }
     }
     
-    
+    func back(sender: UIBarButtonItem) {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: false)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

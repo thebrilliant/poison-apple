@@ -21,6 +21,7 @@ class StartController: UIViewController {
         print(navCont.playerName)
         startImage.image = UIImage(named: "apple-cube")
         // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true
     }
 
     override func didReceiveMemoryWarning() {

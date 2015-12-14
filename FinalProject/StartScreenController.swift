@@ -31,7 +31,7 @@ class StartScreenController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         let navCont = self.navigationController as! NavViewController
         navCont.backgroundAudio!.stop()
-                self.navigationItem.hidesBackButton = true
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -27,6 +27,7 @@ class NavViewController: UINavigationController {
     var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")!))
     var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "little-red")!, UIImage(named: "wolfie")!])
     var pageNum : Int = 1
+    var characterIndex = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
