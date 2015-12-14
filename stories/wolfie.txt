@@ -21,3 +21,10 @@ The child tells you about their trip to grandma's house.
     choice 1: watch child
     choice 2: tell child to pick flowers.
 
+The child starts screaming, causing a hunter nearby to come and shoot you.
+    choice 1: main menu
+    choice 2: replay
+
+The child goes to pick flowers and is on their way and you continue your day in peace.
+    choice 1: main menu
+    choice 2: replay
