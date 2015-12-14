@@ -24,6 +24,8 @@ class PlayController: UIViewController {
     //var audio = try? AVAudioPlayer(contentsOfURL: NSURL(string: "music/kwps.mp3", relativeToURL: nil)!, fileTypeHint: "mp3")
     
     var appTheme : UIColor!
+    var randNum = Int(arc4random_uniform(2))
+    var deathChoice = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +41,23 @@ class PlayController: UIViewController {
         
         var foo = [String:AnyObject]()
         foo = navCont.items[1]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
-        storyText.text = foo["Text"] as? String
+        let text = foo["Text"] as? String
+        storyText.text = text!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
         if(foo["Choice1"] as? String == "Main Menu") {
             mainMenu.hidden = false
             option1.hidden = true
             option2.hidden = true
          mainMenu.setTitle(foo["Choice1"] as? String, forState: .Normal)
         } else {
-        option1.setTitle(foo["Choice1"] as? String, forState: .Normal)
-        option2.setTitle(foo["Choice2"] as? String, forState: .Normal)
+            print(randNum)
+            if(randNum == 0) {
+                option1.setTitle(foo["Choice1"] as? String, forState: .Normal)
+                option2.setTitle(foo["Choice2"] as? String, forState: .Normal)
+            } else {
+                deathChoice = true
+                option2.setTitle(foo["Choice1"] as? String, forState: .Normal)
+                option1.setTitle(foo["Choice2"] as? String, forState: .Normal)
+            }
         }
     }
     
@@ -74,13 +84,20 @@ class PlayController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "next" {
             let navCont = self.navigationController as! NavViewController
+            if(deathChoice){
+            navCont.pageNum++
+            } else {
             navCont.pageNum++
             navCont.pageNum++
-            print(navCont.pageNum)
+            }
         } else if segue.identifier == "back" {
             let navCont = self.navigationController as! NavViewController
-            navCont.pageNum++
-            print(navCont.pageNum)
+            if(deathChoice){
+                navCont.pageNum++
+                navCont.pageNum++
+            } else {
+                navCont.pageNum++
+            }
         } else if segue.identifier == "main" {
             let navCont = self.navigationController as! NavViewController
             navCont.pageNum = 1
