@@ -1,0 +1,43 @@
+Once upon a time in a castle far, far away, there was a queen named [name].
+[name] is the most beautiful in all the land, until [name]'s stepdaughter grows up.
+    choice 1: do nothing 
+    choice 2: banish child
+
+Your stepchild grows up and becomes the most beautiful queen.
+The attention gained by her depresses you and on her birthday, you take your own life.
+    choice 1: main menu
+    choice 2: replay
+
+You banish the child to be killed by a hunstman and for him to bring back the child's liver and lungs.
+The huntsman returns with the organs.
+    choice 1: throw the organs away
+    choice 2: cook and eat them
+
+You touch the bloody organs and get infected by a fatal, non-curable, bloodborne pathogen.
+    choice 1: main menu
+    choice 2: replay
+
+You dine on the organs and the following day ask your magic mirror if you are the fairest one of all.
+The mirror informs you that the child lives.
+Enraged, you set out to kill the child yourself.
+You find the cottage the child is living in.
+    choice 1: burn down cottage
+    choice 2: knock on door
+
+You get caught in the fire as the cottage burns and choke on the smoke.
+    choice 1: main menu
+    choice 2: replay
+
+Dressed as a commoner, you knock on the door and the child answers the door.
+You offer the child the poisoned half of an apple but the child is wary of you.
+    choice 1: offer the apple again
+    choice 2: start to eat the other half
+
+The child gets suspicious and sees through your disguise and starts screaming.
+Seven dwarves return to the cottage and think you're attacking the child, so they attack you.
+    choice 1: main menu
+    choice 2: replay
+
+The child takes the poisoned apple and dies and you are again the fairest in all the land.
+    choice 1: main menu
+    choice 2: replay

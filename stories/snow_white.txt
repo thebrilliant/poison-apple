@@ -1,0 +1,68 @@
+Once upon a time in a castle far, far away, there was a princess named [name].
+[name] has a step mother that loves being the most beautiful in all the land.
+When [name] grows up, [name] becomes the most beautiful in all the land.
+The Queen then banishes [name] and orders a huntsman to kill [name].
+    choice 1: run into the woods
+    choice 2: cry for mercy
+
+You run into the deadly dark woods where you trip, hit your head on a rock and are taken off by a carnivorous animal.
+    choice 1: main menu
+    choice 2: replay
+
+The huntsman sees you sobbing and takes pity, letting you run into the woods.
+While running away, you come across a small cottage.
+    choice 1: stay away
+    choice 2: go in
+
+You stay in the forest as it starts to get dark and cold, slowly freezing to death.
+    choice 1: main menu
+    choice 2: replay
+
+You go into the cottage and find that everything is miniature.
+Soon seven small dwarves come and question why you are in their house.
+    choice 1: lie
+    choice 2: explain
+
+The dwarves realize you are lying and begin to attack you.
+    choice 1: main menu
+    choice 2: replay
+
+The dwarves decide to make a deal with you and let you stay as long as you take care of the cottage.
+You agree and the next day are left to the house as the dwarves go out to work.
+A knock sounds at the door.
+    choice 1: ignore it
+    choice 2: answer
+
+You are seen through the window by someone dressed like a peddler.
+They force their way in and strangle you.
+    choice 1: main menu
+    choice 2: replay
+
+You open the door to see an old farmer's wife standing there.
+You start talking and the wife offers you half an apple.
+She eats the other half herself.
+    choice 1: refuse apple
+    choice 2: eat apple
+
+The Queen gets tired of her ruse, taking out a slender knife.
+Before you can act, she slits your throat.
+    choice 1: main menu
+    choice 2: replay
+
+You take a bite of the apple and faint.
+The old lady leaves as the dwarves return and find you.
+They entomb you in a glass coffin for all to admire your beauty.
+A prince passing by sees you in the coffin and falls in love.
+He moves you out of the coffin and the apple dislodges in your throat and you wake up.
+The prince then asks to marry you.
+    choice 1: refuse
+    choice 2: accept
+
+You live the rest of your life, destitute with seven dwarves.
+Some years later, you take your own life.
+    choice 1: main menu
+    choice 2: replay
+
+You marry the prince and live happily ever after.
+    choice 1: main menu
+    choice 2: replay
