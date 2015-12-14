@@ -27,11 +27,32 @@ class PlayController: UIViewController {
     var appTheme : UIColor!
     var randNum = Int(arc4random_uniform(2))
     var deathChoice = false
+    var myCounter = 0
+    var timer:NSTimer?
+    var myText = [Character]()
+    
     
     @IBAction func saveProg(sender: UIButton) {
         let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
         myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(1)
     }
+    func fireTimer(){
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "typeLetter", userInfo: nil, repeats: true)
+    }
+    func typeLetter(){
+        if myCounter < myText.count {
+            storyText.text = storyText.text! + String(myText[myCounter])
+            let randomInterval = Double((arc4random_uniform(8)+1))/70
+            timer?.invalidate()
+            timer = NSTimer.scheduledTimerWithTimeInterval(randomInterval, target: self, selector: "typeLetter", userInfo: nil, repeats: false)
+        } else {
+            timer?.invalidate()
+        }
+        myCounter++
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +68,13 @@ class PlayController: UIViewController {
         
         var foo = [String:AnyObject]()
         foo = navCont.items[1]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
-        let text = foo["Text"] as? String
-        storyText.text = text!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
+        var text = foo["Text"] as? String
+        fireTimer()
+        text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
+        
+        myText = Array(text!.characters)
+        
+        
         if(foo["Choice1"] as? String == "Main Menu") {
             mainMenu.hidden = false
             option1.hidden = true
