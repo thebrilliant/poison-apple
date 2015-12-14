@@ -24,6 +24,7 @@ class PlayController: UIViewController {
     //var audio = try? AVAudioPlayer(contentsOfURL: NSURL(string: "music/kwps.mp3", relativeToURL: nil)!, fileTypeHint: "mp3")
     
     var appTheme : UIColor!
+    var randNum : 
     
     override func viewDidLoad() {
         super.viewDidLoad()
