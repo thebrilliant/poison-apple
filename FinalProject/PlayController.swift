@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlayController: UIViewController {
     
@@ -26,6 +27,11 @@ class PlayController: UIViewController {
     var appTheme : UIColor!
     var randNum = Int(arc4random_uniform(2))
     var deathChoice = false
+    
+    @IBAction func saveProg(sender: UIButton) {
+        let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
+        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(1)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
