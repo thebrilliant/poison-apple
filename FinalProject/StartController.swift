@@ -19,7 +19,7 @@ class StartController: UIViewController {
         super.viewDidLoad()
         let navCont = self.navigationController as! NavViewController
         print(navCont.playerName)
-        startImage.image = UIImage(named: "apple-cube")
+        startImage.image = UIImage(named: "start")
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
     }
