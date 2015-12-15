@@ -62,9 +62,6 @@ class PlayController: UIViewController {
         gameOver.hidden = true
         
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Restart", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
-        self.navigationItem.leftBarButtonItem = newBackButton
-        
         
         // Do any additional setup after loading the view.
         let navCont = self.navigationController as! NavViewController
@@ -101,7 +98,7 @@ class PlayController: UIViewController {
         myText = Array(text!.characters)
         
         
-        if(foo["Choice1"] as? String == "Main Menu") {
+        if(foo["Choice1"] as? String == "Main menu" || foo["Choice1"] as? String == "Main Menu") {
             mainMenu.hidden = false
             option1.hidden = true
             option2.hidden = true

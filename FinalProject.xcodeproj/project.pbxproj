@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D84251D1C1B9B0100DD5BEF /* kwps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D84251C1C1B9B0100DD5BEF /* kwps.mp3 */; };
+		9D85AE781C1FA92E00B6AF7B /* drones.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D85AE771C1FA92E00B6AF7B /* drones.mp3 */; };
 		9DF7D1E91C113DC400859B7D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF7D1E41C113DC400859B7D /* SettingsController.swift */; };
 		9DF7D1EA1C113DC400859B7D /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF7D1E51C113DC400859B7D /* StartController.swift */; };
 		9DF7D1EB1C113DC400859B7D /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF7D1E61C113DC400859B7D /* PlayController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		9D84251C1C1B9B0100DD5BEF /* kwps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kwps.mp3; path = music/kwps.mp3; sourceTree = "<group>"; };
+		9D85AE771C1FA92E00B6AF7B /* drones.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drones.mp3; sourceTree = "<group>"; };
 		9DF7D1E41C113DC400859B7D /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		9DF7D1E51C113DC400859B7D /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		9DF7D1E61C113DC400859B7D /* PlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		73F6E21F1C1B900D00149088 /* music */ = {
 			isa = PBXGroup;
 			children = (
+				9D85AE771C1FA92E00B6AF7B /* drones.mp3 */,
 				9D84251C1C1B9B0100DD5BEF /* kwps.mp3 */,
 			);
 			name = music;
@@ -288,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D85AE781C1FA92E00B6AF7B /* drones.mp3 in Resources */,
 				EFCF04DA1C0E91AE007BE6E4 /* LaunchScreen.storyboard in Resources */,
 				EFCF04D71C0E91AE007BE6E4 /* Assets.xcassets in Resources */,
 				EFCF04D51C0E91AE007BE6E4 /* Main.storyboard in Resources */,

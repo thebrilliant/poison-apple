@@ -24,7 +24,7 @@ class NavViewController: UINavigationController {
     var playerName : String = String()
     var items = [NSDictionary]()
     var myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
-    var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")!))
+    var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("drones", ofType: "mp3")!))
     var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "little-red")!, UIImage(named: "wolfie")!])
     var pageNum : Int = 1
     var characterIndex = 1
