@@ -13,6 +13,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var characterPicker: UIPickerView!
     @IBOutlet weak var storyTitle: UILabel!
     @IBOutlet weak var playerName: UITextField!
+    @IBOutlet weak var savedName: UILabel!
     
     var currentStory : String?
     var pickerDataSource = ["White", "Red", "Green", "Blue"]
@@ -23,6 +24,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.viewDidLoad()
         self.characterPicker.dataSource = self
         self.characterPicker.delegate = self
+        savedName.hidden = true
         
         let navCont = self.navigationController as! NavViewController
         navCont.backgroundAudio!.stop()
@@ -33,6 +35,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             imagesSource = navCont.imagesSource.redRidingHood
             navCont.characterIndex = 4
         }
+        storyTitle.text = "Choose your character!"
 
     }
     
@@ -58,6 +61,9 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         setBackground()
         if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != "" {
             playerName.hidden = true
+            savedName.hidden = false
+            characterPicker.hidden = true
+            savedName.text = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String
         }
     }
     

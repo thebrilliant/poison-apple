@@ -113,6 +113,12 @@
                                     <outlet property="delegate" destination="pGT-Ea-fmZ" id="akc-qE-dpk"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC3-np-oSI">
+                                <rect key="frame" x="158" y="159" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,6 +139,7 @@
                     <connections>
                         <outlet property="characterPicker" destination="W7M-3b-XnV" id="idq-MS-VwJ"/>
                         <outlet property="playerName" destination="ZGX-cI-s9Z" id="M20-P1-IFU"/>
+                        <outlet property="savedName" destination="JC3-np-oSI" id="GPg-pu-BfN"/>
                         <outlet property="storyTitle" destination="5TV-T1-Xya" id="Bhp-25-Ly0"/>
                         <segue destination="Kwy-nd-IpJ" kind="show" identifier="toStart" id="P2P-om-kAe"/>
                     </connections>
@@ -381,8 +388,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZAk-kN-Y8a"/>
-        <segue reference="mBh-5n-unL"/>
+        <segue reference="P2P-om-kAe"/>
         <segue reference="cNF-Vg-5KL"/>
-        <segue reference="3B5-95-mdg"/>
+        <segue reference="uAu-11-6TB"/>
     </inferredMetricsTieBreakers>
 </document>
