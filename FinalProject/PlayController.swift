@@ -31,7 +31,7 @@ class PlayController: UIViewController {
     var myCounter = 0
     var timer:NSTimer?
     var myText = [Character]()
-    var progress = 0
+    var progress = 0.00
     var currentPage : Int?
     
     @IBAction func saveProg(sender: UIButton) {
@@ -58,6 +58,7 @@ class PlayController: UIViewController {
         }
         myCounter++
     }
+    
     func saveLocal(num : Int, name : String) {
             NSUserDefaults.standardUserDefaults().setObject(num, forKey: "num")
             NSUserDefaults.standardUserDefaults().synchronize()
@@ -111,7 +112,10 @@ class PlayController: UIViewController {
         text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
         
         myText = Array(text!.characters)
-        print(navCont.items[navCont.characterIndex].count)
+        print("derry\(navCont.pageNum) \(navCont.items[navCont.characterIndex].count)")
+        var lastPage = navCont.items[navCont.characterIndex].count/2
+        progress = (Double(navCont.pageNum/2)  / Double(lastPage)) * 100
+        progressDisplay.text = "Progress: \(progress)%"
         
         if(foo["Choice1"] as? String == "Main menu" || foo["Choice1"] as? String == "Main Menu") {
             mainMenu.hidden = false
