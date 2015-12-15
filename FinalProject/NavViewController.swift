@@ -27,19 +27,44 @@ class NavViewController: UINavigationController {
     var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("drones", ofType: "mp3")!))
     var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "little-red")!, UIImage(named: "wolfie")!])
     var pageNum : Int = 1
+    
     var characterIndex = 1
     var musicOn: Bool = true
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            myRootRef.observeEventType(.Value, withBlock: { snapshot in
-                    for item in snapshot.children {
-                        let child = item as! FDataSnapshot
-                        let dict = child.value as! NSDictionary
-                        self.items.append(dict)
-                    }
-            })
+
+        
+        
         // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(animated: Bool) {
+//        if self.items.count > 0 {
+////            self.pageNum = (self.items[0]["Index"] as? Int)!
+////            self.playerName = (self.items[0]["Name"] as? String)!
+//        }
+        myRootRef.observeEventType(.Value, withBlock: { snapshot in
+            for item in snapshot.children {
+                let child = item as! FDataSnapshot
+                let dict = child.value as! NSDictionary
+                self.items.append(dict)
+            }
+            
+        })
+        if NSUserDefaults.standardUserDefaults().objectForKey("num") != nil {
+            print("has value")
+            self.pageNum = NSUserDefaults.standardUserDefaults().objectForKey("num") as! Int
+        } else {
+            print("no vlaue")
+        }
+        if NSUserDefaults.standardUserDefaults().objectForKey("name") != nil {
+            print("has value")
+            self.playerName = NSUserDefaults.standardUserDefaults().objectForKey("name") as! String
+        } else {
+            print("no vlaue")
+        }
     }
 
     override func didReceiveMemoryWarning() {

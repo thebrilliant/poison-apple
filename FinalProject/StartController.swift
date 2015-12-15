@@ -18,11 +18,13 @@ class StartController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let navCont = self.navigationController as! NavViewController
+        self.navigationItem.hidesBackButton = true
+
         print(navCont.playerName)
         startImage.image = UIImage(named: "start")
         // Do any additional setup after loading the view.
-        self.navigationItem.hidesBackButton = true
-        navCont.pageNum = 1 
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +34,12 @@ class StartController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         setBackground()
+//        let navCont = self.navigationController as! NavViewController
+//
+//        if navCont.items[0]["Index"] as? Int != 0 {
+//            navCont.pageNum = (navCont.items[0]["Index"]  as? Int)!
+//            navCont.playerName = (navCont.items[0]["Name"] as? String)!
+//        }
     }
     
     func setBackground() {

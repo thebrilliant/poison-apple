@@ -31,15 +31,22 @@ class PlayController: UIViewController {
     var myCounter = 0
     var timer:NSTimer?
     var myText = [Character]()
-    
+    var progress = 0
+    var currentPage : Int?
     
     @IBAction func saveProg(sender: UIButton) {
+        let navCont = self.navigationController as! NavViewController
         let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
-        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(1)
+//        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(currentPage)
+//        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Name").setValue(navCont.playerName)
+        performSegueWithIdentifier("save", sender: self)
+        saveLocal(navCont.pageNum, name : navCont.playerName)
     }
+    
     func fireTimer(){
         timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "typeLetter", userInfo: nil, repeats: true)
     }
+    
     func typeLetter(){
         if myCounter < myText.count {
             storyText.text = storyText.text! + String(myText[myCounter])
@@ -51,7 +58,14 @@ class PlayController: UIViewController {
         }
         myCounter++
     }
-    
+    func saveLocal(num : Int, name : String) {
+            NSUserDefaults.standardUserDefaults().setObject(num, forKey: "num")
+            NSUserDefaults.standardUserDefaults().synchronize()
+
+            NSUserDefaults.standardUserDefaults().setObject(name, forKey: "name")
+            NSUserDefaults.standardUserDefaults().synchronize()
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +85,7 @@ class PlayController: UIViewController {
             navCont.backgroundAudio!.play()
         }
         
+        self.currentPage = navCont.pageNum
 
     }
     
@@ -96,7 +111,7 @@ class PlayController: UIViewController {
         text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
         
         myText = Array(text!.characters)
-        
+        print(navCont.items[navCont.characterIndex].count)
         
         if(foo["Choice1"] as? String == "Main menu" || foo["Choice1"] as? String == "Main Menu") {
             mainMenu.hidden = false
@@ -105,10 +120,23 @@ class PlayController: UIViewController {
             gameOver.hidden = false
             
             mainMenu.setTitle(foo["Choice1"] as? String, forState: .Normal)
-            storyImage.image = UIImage(named:"death")
-            storyText.textColor = UIColor.whiteColor()
-            gameOver.text = "GAME OVER"
-            gameOver.textColor = UIColor.whiteColor()
+
+            
+            if(navCont.pageNum == navCont.items[navCont.characterIndex].count) {
+                gameOver.text = "HAPPY ENDING"
+            } else {
+                storyImage.image = UIImage(named:"death")
+                storyText.textColor = UIColor.whiteColor()
+                gameOver.text = "GAME OVER"
+                gameOver.textColor = UIColor.whiteColor()
+            }
+//            let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
+//            myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(0)
+//            myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Name").setValue("")
+            navCont.pageNum = 1
+            navCont.playerName = ""
+            saveLocal(navCont.pageNum, name : navCont.playerName)
+            
         }  else {
             print(randNum)
             if(randNum == 0) {
@@ -132,7 +160,8 @@ class PlayController: UIViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "next" {
+          if segue.identifier == "next" {
+
             let navCont = self.navigationController as! NavViewController
             if(deathChoice){
             navCont.pageNum++

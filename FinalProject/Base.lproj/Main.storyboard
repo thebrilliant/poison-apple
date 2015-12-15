@@ -54,6 +54,7 @@
                     <connections>
                         <segue destination="HDg-H8-mDV" kind="show" identifier="toSettings" id="3B5-95-mdg"/>
                         <segue destination="Pi1-P7-dXc" kind="show" identifier="toMenu" id="tum-v5-pt3"/>
+                        <segue destination="Kwy-nd-IpJ" kind="show" identifier="showSave" id="mBh-5n-unL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7Z-if-ZJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,6 +234,7 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveProg:" destination="ywC-zN-L3Q" eventType="touchUpInside" id="kWO-dG-DcP"/>
+                                    <segue destination="anK-oA-vig" kind="show" identifier="save" id="cNF-Vg-5KL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-Io-5jb">
@@ -245,7 +247,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0U-Zw-Hva">
                                 <rect key="frame" x="26" y="176" width="205" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -378,8 +380,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ow2-3d-WT2"/>
         <segue reference="ZAk-kN-Y8a"/>
-        <segue reference="q2Z-Uf-86Z"/>
+        <segue reference="mBh-5n-unL"/>
+        <segue reference="cNF-Vg-5KL"/>
+        <segue reference="3B5-95-mdg"/>
     </inferredMetricsTieBreakers>
 </document>

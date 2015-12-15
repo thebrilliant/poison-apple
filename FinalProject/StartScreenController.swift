@@ -32,10 +32,27 @@ class StartScreenController: UITableViewController {
         let navCont = self.navigationController as! NavViewController
         navCont.backgroundAudio!.stop()
         self.navigationItem.hidesBackButton = true
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         setBackground()
+        let navCont = self.navigationController as! NavViewController
+
+//        print(navCont.items.count)
+//        if navCont.items.count > 0 {
+//            print("grabbed data")
+//            print(navCont.items[0]["Index"] as? Int)
+//            if navCont.items[0]["Index"] as? Int != 0 {
+//                navCont.pageNum = (navCont.items[0]["Index"] as? Int)!
+//                navCont.playerName = (navCont.items[0]["Name"] as? String)!
+//                print(navCont.pageNum)
+//            }  else {
+//                navCont.pageNum = 1
+//                navCont.playerName = ""
+//            }
+//        }
     }
     func setBackground() {
         //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
@@ -74,13 +91,23 @@ class StartScreenController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.row {
-        case 0,1:
-            rowClicked = indexPath.row
-            performSegueWithIdentifier("toMenu", sender: self)
-        default:
-            print("coming soon")
-        }
+        let navCont = self.navigationController as! NavViewController
+        
+//        if navCont.items[0]["Index"] as? Int != 0 {
+//            performSegueWithIdentifier("showSave", sender: self)
+//        } else {
+//        if NSUserDefaults.standardUserDefaults().objectForKey("num") != nil {
+//            performSegueWithIdentifier("showSave", sender: self)
+//        } else {
+            print("derry derry 4352345")
+            switch indexPath.row {
+            case 0,1:
+                rowClicked = indexPath.row
+                performSegueWithIdentifier("toMenu", sender: self)
+            default:
+                print("coming soon")
+            }
+//        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

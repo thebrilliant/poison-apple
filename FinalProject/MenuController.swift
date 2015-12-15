@@ -33,8 +33,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             imagesSource = navCont.imagesSource.redRidingHood
             navCont.characterIndex = 4
         }
-//        if saved data is not available, reset page number
-        navCont.pageNum = 1
+
     }
     
     @IBAction func toSettings(sender: AnyObject) {
@@ -43,8 +42,11 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func moveToStart(sender: AnyObject) {
         let navCont = self.navigationController as! NavViewController
-        navCont.playerName = playerName.text!
+//        if navCont.items[0]["Index"] as? Int != 0 {
+//            playerName.text! = (navCont.items[0]["Name"] as? String)!
+//        }
         
+        navCont.playerName = playerName.text!
         performSegueWithIdentifier("toStart", sender: self)
     }
     
@@ -54,6 +56,9 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     override func viewWillAppear(animated: Bool) {
         setBackground()
+        if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != "" {
+            playerName.hidden = true
+        }
     }
     
     func setBackground() {
