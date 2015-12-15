@@ -31,7 +31,7 @@ class PlayController: UIViewController {
     var myCounter = 0
     var timer:NSTimer?
     var myText = [Character]()
-    var progress = 0.00
+    var progress = 0
     var currentPage : Int?
     
     @IBAction func saveProg(sender: UIButton) {
@@ -80,7 +80,7 @@ class PlayController: UIViewController {
         
         // Do any additional setup after loading the view.
         let navCont = self.navigationController as! NavViewController
-        self.navigationItem.title = "Page\(navCont.pageNum)"
+        self.navigationItem.title = ""
         
         if (navCont.musicOn) {
             navCont.backgroundAudio!.play()
@@ -114,7 +114,7 @@ class PlayController: UIViewController {
         myText = Array(text!.characters)
         print("derry\(navCont.pageNum) \(navCont.items[navCont.characterIndex].count)")
         var lastPage = navCont.items[navCont.characterIndex].count/2
-        progress = (Double(navCont.pageNum/2)  / Double(lastPage)) * 100
+        progress = Int((Double(navCont.pageNum/2)  / Double(lastPage)) * 100)
         progressDisplay.text = "Progress: \(progress)%"
         
         if(foo["Choice1"] as? String == "Main menu" || foo["Choice1"] as? String == "Main Menu") {
@@ -128,12 +128,14 @@ class PlayController: UIViewController {
             
             if(navCont.pageNum == navCont.items[navCont.characterIndex].count) {
                 gameOver.text = "HAPPY ENDING"
+                storyImage.image = UIImage(named:"castle")
             } else {
                 storyImage.image = UIImage(named:"death")
-                storyText.textColor = UIColor.whiteColor()
                 gameOver.text = "GAME OVER"
-                gameOver.textColor = UIColor.whiteColor()
+
             }
+            storyText.textColor = UIColor.whiteColor()
+            gameOver.textColor = UIColor.whiteColor()
 //            let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
 //            myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(0)
 //            myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Name").setValue("")
