@@ -24,6 +24,8 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
         self.colorThemePicker.delegate = self
         
         let navController = self.navigationController as! NavViewController
+        soundSwitch.setOn(false, animated: true)
+        musicSwitch.setOn(navController.musicOn, animated: true)
         colorThemePicker.selectRow(navController.appThemeName, inComponent: 0, animated: true)
         // Do any additional setup after loading the view.
     }
@@ -41,9 +43,11 @@ class SettingsController: UIViewController, UIPickerViewDataSource, UIPickerView
         if(!musicSwitch.on) {
             let navCont = self.navigationController as! NavViewController
             navCont.backgroundAudio!.stop()
+            navCont.musicOn = false
         } else {
             let navCont = self.navigationController as! NavViewController
             navCont.backgroundAudio!.play()
+            navCont.musicOn = true
         }
     }
     

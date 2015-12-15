@@ -68,7 +68,10 @@ class PlayController: UIViewController {
         // Do any additional setup after loading the view.
         let navCont = self.navigationController as! NavViewController
         self.navigationItem.title = "Page\(navCont.pageNum)"
-        navCont.backgroundAudio!.play()
+        
+        if (navCont.musicOn) {
+            navCont.backgroundAudio!.play()
+        }
         
         var foo = [String:AnyObject]()
         foo = navCont.items[navCont.characterIndex]["Page\(navCont.pageNum)"]! as! [String : AnyObject]

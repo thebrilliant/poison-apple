@@ -28,6 +28,7 @@ class NavViewController: UINavigationController {
     var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "little-red")!, UIImage(named: "wolfie")!])
     var pageNum : Int = 1
     var characterIndex = 1
+    var musicOn: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
