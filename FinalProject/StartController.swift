@@ -22,6 +22,7 @@ class StartController: UIViewController {
         startImage.image = UIImage(named: "start")
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
+        navCont.pageNum = 1 
     }
 
     override func didReceiveMemoryWarning() {

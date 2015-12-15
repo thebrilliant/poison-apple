@@ -33,7 +33,8 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             imagesSource = navCont.imagesSource.redRidingHood
             navCont.characterIndex = 4
         }
-        
+//        if saved data is not available, reset page number
+        navCont.pageNum = 1
     }
     
     @IBAction func toSettings(sender: AnyObject) {

@@ -242,6 +242,12 @@
                                     <segue destination="anK-oA-vig" kind="show" identifier="main" id="Ow2-3d-WT2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0U-Zw-Hva">
+                                <rect key="frame" x="26" y="176" width="205" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,6 +261,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="gameOver" destination="n0U-Zw-Hva" id="Wqy-73-CRS"/>
                         <outlet property="mainMenu" destination="pMu-Io-5jb" id="Nqp-ss-65A"/>
                         <outlet property="option1" destination="Oda-di-FeX" id="eKw-aB-3Xk"/>
                         <outlet property="option2" destination="OKm-jc-9Ng" id="KPJ-zS-hsK"/>

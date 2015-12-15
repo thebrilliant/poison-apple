@@ -18,6 +18,7 @@ class PlayController: UIViewController {
     @IBOutlet weak var option1: UIButton!
     @IBOutlet weak var option2: UIButton!
     
+    @IBOutlet weak var gameOver: UILabel!
     @IBOutlet weak var mainMenu: UIButton!
     //var sourcePath = NSBundle.mainBundle().pathForResource("kpws", ofType: "mp3")!
     //var sourcePath = NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")
@@ -52,16 +53,16 @@ class PlayController: UIViewController {
     }
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         /*print("source path: \(sourcePath)")
         print("file path: \(filePath)")*/
         
         mainMenu.hidden = true
+        gameOver.hidden = true
+        
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Main Menu", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
+        let newBackButton = UIBarButtonItem(title: "Restart", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
         self.navigationItem.leftBarButtonItem = newBackButton
         
         
@@ -73,31 +74,7 @@ class PlayController: UIViewController {
             navCont.backgroundAudio!.play()
         }
         
-        var foo = [String:AnyObject]()
-        foo = navCont.items[navCont.characterIndex]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
-        var text = foo["Text"] as? String
-        fireTimer()
-        text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
-        
-        myText = Array(text!.characters)
-        
-        
-        if(foo["Choice1"] as? String == "Main Menu") {
-            mainMenu.hidden = false
-            option1.hidden = true
-            option2.hidden = true
-         mainMenu.setTitle(foo["Choice1"] as? String, forState: .Normal)
-        } else {
-            print(randNum)
-            if(randNum == 0) {
-                option1.setTitle(foo["Choice1"] as? String, forState: .Normal)
-                option2.setTitle(foo["Choice2"] as? String, forState: .Normal)
-            } else {
-                deathChoice = true
-                option2.setTitle(foo["Choice1"] as? String, forState: .Normal)
-                option1.setTitle(foo["Choice2"] as? String, forState: .Normal)
-            }
-        }
+
     }
     
     func back(sender: UIBarButtonItem) {
@@ -112,6 +89,40 @@ class PlayController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         setBackground()
+
+        let navCont = self.navigationController as! NavViewController
+        
+        var foo = [String:AnyObject]()
+        foo = navCont.items[navCont.characterIndex]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
+        var text = foo["Text"] as? String
+        fireTimer()
+        text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
+        
+        myText = Array(text!.characters)
+        
+        
+        if(foo["Choice1"] as? String == "Main Menu") {
+            mainMenu.hidden = false
+            option1.hidden = true
+            option2.hidden = true
+            gameOver.hidden = false
+            
+            mainMenu.setTitle(foo["Choice1"] as? String, forState: .Normal)
+            storyImage.image = UIImage(named:"death")
+            storyText.textColor = UIColor.whiteColor()
+            gameOver.text = "GAME OVER"
+            gameOver.textColor = UIColor.whiteColor()
+        }  else {
+            print(randNum)
+            if(randNum == 0) {
+                option1.setTitle(foo["Choice1"] as? String, forState: .Normal)
+                option2.setTitle(foo["Choice2"] as? String, forState: .Normal)
+            } else {
+                deathChoice = true
+                option2.setTitle(foo["Choice1"] as? String, forState: .Normal)
+                option1.setTitle(foo["Choice2"] as? String, forState: .Normal)
+            }
+        }
     }
     
     func setBackground() {
