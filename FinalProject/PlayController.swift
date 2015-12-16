@@ -40,7 +40,7 @@ class PlayController: UIViewController {
 //        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(currentPage)
 //        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Name").setValue(navCont.playerName)
         print("Save data: \(navCont.pageNum), name : \(navCont.playerName), charIndex: \(navCont.characterIndex)")
-        saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex)
+        saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex!)
         performSegueWithIdentifier("save", sender: self)
     }
     
@@ -110,14 +110,14 @@ class PlayController: UIViewController {
         let navCont = self.navigationController as! NavViewController
         
         var foo = [String:AnyObject]()
-        foo = navCont.items[navCont.characterIndex]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
+        foo = navCont.items[navCont.characterIndex!]["Page\(navCont.pageNum)"]! as! [String : AnyObject]
         var text = foo["Text"] as? String
         fireTimer()
         text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
         
         myText = Array(text!.characters)
 
-        var lastPage = navCont.items[navCont.characterIndex].count/2
+        var lastPage = navCont.items[navCont.characterIndex!].count/2
         progress = Int((Double(navCont.pageNum/2)  / Double(lastPage)) * 100)
         progressDisplay.text = "Progress: \(progress)%"
         
@@ -130,7 +130,7 @@ class PlayController: UIViewController {
             mainMenu.setTitle(foo["Choice1"] as? String, forState: .Normal)
 
             
-            if(navCont.pageNum == navCont.items[navCont.characterIndex].count) {
+            if(navCont.pageNum == navCont.items[navCont.characterIndex!].count) {
                 gameOver.text = "HAPPY ENDING"
                 storyImage.image = UIImage(named:"castle")
             } else {
@@ -143,7 +143,7 @@ class PlayController: UIViewController {
             navCont.pageNum = 1
             navCont.playerName = ""
             navCont.characterIndex = 0
-            saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex)
+            saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex!)
             
         }  else {
             print(randNum)

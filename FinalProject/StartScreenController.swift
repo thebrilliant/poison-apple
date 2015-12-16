@@ -97,21 +97,26 @@ class StartScreenController: UITableViewController {
             case 0,1:
                 print("num : \(NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int), charIndex: \(NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)")
 
-            if NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int != nil {
-                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int != nil {
-                    if (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 1 || NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 2) && indexPath.row == 0 {
+            if NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int != 1 {
+                print("text1")
+//                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int != nil{
+                if navCont.characterIndex != nil {
+                    print("text2")
+                    if (navCont.characterIndex  == 1 || navCont.characterIndex  == 2) && indexPath.row == 0 {
                         rowClicked = indexPath.row
                         performSegueWithIdentifier("toMenu", sender: self)
                     }
-                    if (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 3 || NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 4) && indexPath.row == 1 {
+                    if (navCont.characterIndex  == 3 || navCont.characterIndex  == 4) && indexPath.row == 1 {
                         rowClicked = indexPath.row
                         performSegueWithIdentifier("toMenu", sender: self)
                     }
                 } else {
+                    print("text3")
                     rowClicked = indexPath.row
                     performSegueWithIdentifier("toMenu", sender: self)
                 }
             }else {
+                print("text4")
                 rowClicked = indexPath.row
                 performSegueWithIdentifier("toMenu", sender: self)
             }

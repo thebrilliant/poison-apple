@@ -30,7 +30,7 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         navCont.backgroundAudio!.stop()
         if(currentStory == "Snow White") {
             imagesSource = navCont.imagesSource.snowWhite
-            navCont.characterIndex = 2
+            navCont.characterIndex = 2 
         } else {
             imagesSource = navCont.imagesSource.redRidingHood
             navCont.characterIndex = 4
@@ -65,6 +65,8 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         setBackground()
         let navCont = self.navigationController as! NavViewController
                 print("menu: \(navCont.pageNum), name : \(navCont.playerName), charIndex: \(navCont.characterIndex)")
+                print("menu: \(NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int), name : \(NSUserDefaults.standardUserDefaults().objectForKey("name") as? String), charIndex: \(NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)")
+        
         if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != nil {
             if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != ""  {
                 print(NSUserDefaults.standardUserDefaults().objectForKey("name") as? String)
@@ -72,8 +74,19 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 savedName.hidden = false
                 characterPicker.hidden = true
                 savedName.text = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String
-                navCont.playerName = (NSUserDefaults.standardUserDefaults().objectForKey("name") as? String)!
                 storyTitle.text = "You have a saved story!"
+                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil && navCont.characterIndex != 1 {
+                    if(currentStory == "Snow White") {
+                        navCont.characterIndex = 1
+                    }
+                }
+                    
+                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil && navCont.characterIndex != 3 {
+                    if(currentStory == "Red Riding Hood") {
+                        navCont.characterIndex = 3
+                    }
+                }
+                
             }
            
         }
@@ -104,15 +117,35 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         if(currentStory == "Snow White"){
             if(row == 0) {
-                navCont.characterIndex = 2
+               if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil {
+                    print("menu test1")
+                    navCont.characterIndex = 2
+               } else {
+                print("menu test2")
+                    navCont.characterIndex = (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)!
+               }
             } else {
-                navCont.characterIndex = 1
+                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil {
+                    print("menu test3")
+                    navCont.characterIndex = 1
+                } else {
+                    print("menu test4")
+                    navCont.characterIndex = (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)!
+                }
             }
         } else {
             if(row == 0) {
-                navCont.characterIndex = 4
+                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil {
+                    navCont.characterIndex = 4
+                } else {
+                    navCont.characterIndex = (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)!
+                }
             } else {
-                navCont.characterIndex = 3
+                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil {
+                    navCont.characterIndex = 3
+                } else {
+                    navCont.characterIndex = (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)!
+                }
             }
         }
 //        if(row == 0) {

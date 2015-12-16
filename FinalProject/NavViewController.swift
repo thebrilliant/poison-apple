@@ -29,7 +29,7 @@ class NavViewController: UINavigationController {
     var pageNum : Int = 1
     var savedStory : String = String()
     
-    var characterIndex : Int = Int()
+    var characterIndex : Int?
     var musicOn: Bool = true
  
     
