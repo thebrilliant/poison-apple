@@ -30,10 +30,14 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         navCont.backgroundAudio!.stop()
         if(currentStory == "Snow White") {
             imagesSource = navCont.imagesSource.snowWhite
-            navCont.characterIndex = 2 
+            if(navCont.characterIndex == nil) {
+                navCont.characterIndex = 2
+            }
         } else {
             imagesSource = navCont.imagesSource.redRidingHood
-            navCont.characterIndex = 4
+            if(navCont.characterIndex == nil) {
+                navCont.characterIndex = 4
+            }
         }
         storyTitle.text = "Choose your character!"
 
@@ -75,14 +79,18 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 characterPicker.hidden = true
                 savedName.text = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String
                 storyTitle.text = "You have a saved story!"
-                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil && navCont.characterIndex != 1 {
+//                if (NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int != 1 || NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil) && navCont.characterIndex == 2 {
+               if navCont.pageNum == 1 && navCont.playerName != "" && navCont.characterIndex == 2 && NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int == 1 && NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil  {
                     if(currentStory == "Snow White") {
                         navCont.characterIndex = 1
                     }
                 }
-                    
-                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil && navCont.characterIndex != 3 {
-                    if(currentStory == "Red Riding Hood") {
+//                    
+//                if (NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int != 1 || NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil)  && navCont.characterIndex == 4 {
+               if navCont.pageNum == 1 && navCont.playerName != "" && navCont.characterIndex == 4 && NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int == 1 && NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == nil {
+                print(currentStory)
+                
+                if(currentStory == "Red Riding Hood") {
                         navCont.characterIndex = 3
                     }
                 }

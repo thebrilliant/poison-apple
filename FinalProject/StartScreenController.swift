@@ -39,21 +39,8 @@ class StartScreenController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         setBackground()
         let navCont = self.navigationController as! NavViewController
-
-//        print(navCont.items.count)
-//        if navCont.items.count > 0 {
-//            print("grabbed data")
-//            print(navCont.items[0]["Index"] as? Int)
-//            if navCont.items[0]["Index"] as? Int != 0 {
-//                navCont.pageNum = (navCont.items[0]["Index"] as? Int)!
-//                navCont.playerName = (navCont.items[0]["Name"] as? String)!
-//                print(navCont.pageNum)
-//            }  else {
-//                navCont.pageNum = 1
-//                navCont.playerName = ""
-//            }
-//        }
     }
+    
     func setBackground() {
         //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
         let navCont = self.navigationController as! NavViewController
@@ -92,16 +79,10 @@ class StartScreenController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let navCont = self.navigationController as! NavViewController
-                print("First Screen: \(navCont.pageNum), name : \(navCont.playerName), charIndex: \(navCont.characterIndex)")
          switch indexPath.row {
             case 0,1:
-                print("num : \(NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int), charIndex: \(NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)")
-
             if NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int != 1 {
-                print("text1")
-//                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int != nil{
-                if navCont.characterIndex != nil {
-                    print("text2")
+                 if navCont.characterIndex != nil {
                     if (navCont.characterIndex  == 1 || navCont.characterIndex  == 2) && indexPath.row == 0 {
                         rowClicked = indexPath.row
                         performSegueWithIdentifier("toMenu", sender: self)
@@ -111,12 +92,10 @@ class StartScreenController: UITableViewController {
                         performSegueWithIdentifier("toMenu", sender: self)
                     }
                 } else {
-                    print("text3")
                     rowClicked = indexPath.row
                     performSegueWithIdentifier("toMenu", sender: self)
                 }
             }else {
-                print("text4")
                 rowClicked = indexPath.row
                 performSegueWithIdentifier("toMenu", sender: self)
             }

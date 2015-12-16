@@ -17,14 +17,9 @@ class PlayController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var option1: UIButton!
     @IBOutlet weak var option2: UIButton!
-    
     @IBOutlet weak var gameOver: UILabel!
     @IBOutlet weak var mainMenu: UIButton!
-    //var sourcePath = NSBundle.mainBundle().pathForResource("kpws", ofType: "mp3")!
-    //var sourcePath = NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")
-    //var filePath : NSURL = NSURL(string: "music/kwps.mp3", relativeToURL: NSURL(string: NSBundle.mainBundle().pathForResource("kwps", ofType: "mp3")!))!
-    //var audio = try? AVAudioPlayer(contentsOfURL: NSURL(string: "music/kwps.mp3", relativeToURL: nil)!, fileTypeHint: "mp3")
-    
+
     var appTheme : UIColor!
     var randNum = Int(arc4random_uniform(2))
     var deathChoice = false
@@ -37,8 +32,7 @@ class PlayController: UIViewController {
     @IBAction func saveProg(sender: UIButton) {
         let navCont = self.navigationController as! NavViewController
         let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
-//        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(currentPage)
-//        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Name").setValue(navCont.playerName)
+
         print("Save data: \(navCont.pageNum), name : \(navCont.playerName), charIndex: \(navCont.characterIndex)")
         saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex!)
         performSegueWithIdentifier("save", sender: self)
@@ -74,9 +68,7 @@ class PlayController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*print("source path: \(sourcePath)")
-        print("file path: \(filePath)")*/
-        
+
         mainMenu.hidden = true
         gameOver.hidden = true
         
@@ -140,10 +132,16 @@ class PlayController: UIViewController {
             }
             storyText.textColor = UIColor.whiteColor()
             gameOver.textColor = UIColor.whiteColor()
+ 
+            if(navCont.pageNum != 1) {
+                navCont.characterIndex = nil
+            }
+
             navCont.pageNum = 1
             navCont.playerName = ""
-            navCont.characterIndex = 0
-            saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex!)
+            
+            saveLocal(1, name : "", charIndex: 0)
+
             
         }  else {
             print(randNum)
