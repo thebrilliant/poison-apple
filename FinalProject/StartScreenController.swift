@@ -92,18 +92,29 @@ class StartScreenController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let navCont = self.navigationController as! NavViewController
-        
-//        if navCont.items[0]["Index"] as? Int != 0 {
-//            performSegueWithIdentifier("showSave", sender: self)
-//        } else {
-//        if NSUserDefaults.standardUserDefaults().objectForKey("num") != nil {
-//            performSegueWithIdentifier("showSave", sender: self)
-//        } else {
-            print("derry derry 4352345")
-            switch indexPath.row {
+                print("First Screen: \(navCont.pageNum), name : \(navCont.playerName), charIndex: \(navCont.characterIndex)")
+         switch indexPath.row {
             case 0,1:
+                print("num : \(NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int), charIndex: \(NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int)")
+
+            if NSUserDefaults.standardUserDefaults().objectForKey("num") as? Int != nil {
+                if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int != nil {
+                    if (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 1 || NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 2) && indexPath.row == 0 {
+                        rowClicked = indexPath.row
+                        performSegueWithIdentifier("toMenu", sender: self)
+                    }
+                    if (NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 3 || NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as? Int == 4) && indexPath.row == 1 {
+                        rowClicked = indexPath.row
+                        performSegueWithIdentifier("toMenu", sender: self)
+                    }
+                } else {
+                    rowClicked = indexPath.row
+                    performSegueWithIdentifier("toMenu", sender: self)
+                }
+            }else {
                 rowClicked = indexPath.row
                 performSegueWithIdentifier("toMenu", sender: self)
+            }
             default:
                 print("coming soon")
             }

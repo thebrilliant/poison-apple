@@ -48,8 +48,11 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //        if navCont.items[0]["Index"] as? Int != 0 {
 //            playerName.text! = (navCont.items[0]["Name"] as? String)!
 //        }
-        
-        navCont.playerName = playerName.text!
+        if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String == nil || NSUserDefaults.standardUserDefaults().objectForKey("name") as? String == ""  {
+            navCont.playerName = self.playerName.text!
+        } else {
+            navCont.playerName = (NSUserDefaults.standardUserDefaults().objectForKey("name") as? String)!
+        }
         performSegueWithIdentifier("toStart", sender: self)
     }
     
@@ -58,7 +61,10 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(animated: Bool) {
+        
         setBackground()
+        let navCont = self.navigationController as! NavViewController
+                print("menu: \(navCont.pageNum), name : \(navCont.playerName), charIndex: \(navCont.characterIndex)")
         if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != nil {
             if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != ""  {
                 print(NSUserDefaults.standardUserDefaults().objectForKey("name") as? String)
@@ -66,8 +72,10 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 savedName.hidden = false
                 characterPicker.hidden = true
                 savedName.text = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String
+                navCont.playerName = (NSUserDefaults.standardUserDefaults().objectForKey("name") as? String)!
+                storyTitle.text = "You have a saved story!"
             }
-            storyTitle.text = "You have a saved story!"
+           
         }
     }
     

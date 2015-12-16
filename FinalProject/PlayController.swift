@@ -39,8 +39,9 @@ class PlayController: UIViewController {
         let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
 //        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(currentPage)
 //        myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Name").setValue(navCont.playerName)
+        print("Save data: \(navCont.pageNum), name : \(navCont.playerName), charIndex: \(navCont.characterIndex)")
+        saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex)
         performSegueWithIdentifier("save", sender: self)
-        saveLocal(navCont.pageNum, name : navCont.playerName)
     }
     
     func fireTimer(){
@@ -59,13 +60,16 @@ class PlayController: UIViewController {
         myCounter++
     }
     
-    func saveLocal(num : Int, name : String) {
+    func saveLocal(num : Int, name : String, charIndex: Int) {
+        
             NSUserDefaults.standardUserDefaults().setObject(num, forKey: "num")
             NSUserDefaults.standardUserDefaults().synchronize()
 
             NSUserDefaults.standardUserDefaults().setObject(name, forKey: "name")
             NSUserDefaults.standardUserDefaults().synchronize()
 
+            NSUserDefaults.standardUserDefaults().setObject(name, forKey: "charIndex")
+            NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     override func viewDidLoad() {
@@ -112,7 +116,7 @@ class PlayController: UIViewController {
         text = text.self!.stringByReplacingOccurrencesOfString("[name]", withString:navCont.playerName)
         
         myText = Array(text!.characters)
-        print("derry\(navCont.pageNum) \(navCont.items[navCont.characterIndex].count)")
+
         var lastPage = navCont.items[navCont.characterIndex].count/2
         progress = Int((Double(navCont.pageNum/2)  / Double(lastPage)) * 100)
         progressDisplay.text = "Progress: \(progress)%"
@@ -136,12 +140,10 @@ class PlayController: UIViewController {
             }
             storyText.textColor = UIColor.whiteColor()
             gameOver.textColor = UIColor.whiteColor()
-//            let myRootRef = Firebase(url:"https://swift-sw.firebaseio.com/")
-//            myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Index").setValue(0)
-//            myRootRef.childByAppendingPath("Aa Save").childByAppendingPath("Name").setValue("")
             navCont.pageNum = 1
             navCont.playerName = ""
-            saveLocal(navCont.pageNum, name : navCont.playerName)
+            navCont.characterIndex = 0
+            saveLocal(navCont.pageNum, name : navCont.playerName, charIndex: navCont.characterIndex)
             
         }  else {
             print(randNum)
@@ -157,7 +159,6 @@ class PlayController: UIViewController {
     }
     
     func setBackground() {
-        //let navController : NavViewController = self.view.window?.rootViewController as! NavViewController
         let navCont = self.navigationController as! NavViewController
         self.appTheme = navCont.appTheme
         self.view.backgroundColor = self.appTheme

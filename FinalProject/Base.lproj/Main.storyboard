@@ -87,7 +87,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLd-GH-Orh" userLabel="nameLabel">
-                                <rect key="frame" x="20" y="159" width="130" height="21"/>
+                                <rect key="frame" x="20" y="159" width="280" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,7 +114,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC3-np-oSI">
-                                <rect key="frame" x="158" y="159" width="42" height="21"/>
+                                <rect key="frame" x="180" y="159" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -245,7 +245,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-Io-5jb">
-                                <rect key="frame" x="149" y="500" width="76" height="30"/>
+                                <rect key="frame" x="112" y="500" width="164" height="30"/>
                                 <state key="normal" title="Main Menu"/>
                                 <connections>
                                     <segue destination="anK-oA-vig" kind="show" identifier="main" id="Ow2-3d-WT2"/>
@@ -387,9 +387,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZAk-kN-Y8a"/>
         <segue reference="P2P-om-kAe"/>
         <segue reference="cNF-Vg-5KL"/>
-        <segue reference="uAu-11-6TB"/>
+        <segue reference="ZAk-kN-Y8a"/>
+        <segue reference="q2Z-Uf-86Z"/>
     </inferredMetricsTieBreakers>
 </document>

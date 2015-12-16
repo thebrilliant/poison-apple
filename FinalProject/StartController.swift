@@ -48,7 +48,6 @@ class StartController: UIViewController {
         self.appTheme = navCont.appTheme
         
         self.view.backgroundColor = self.appTheme
-        print("\(navCont.appTheme) derry derry 1234")
     }
     
     @IBAction func startPressed(sender: AnyObject) {

@@ -27,8 +27,9 @@ class NavViewController: UINavigationController {
     var backgroundAudio = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("drones", ofType: "mp3")!))
     var imagesSource = images(snowWhite : [UIImage(named: "snow-white-profile")!, UIImage(named: "evil-queen-profile")!], redRidingHood : [UIImage(named: "little-red")!, UIImage(named: "wolfie")!])
     var pageNum : Int = 1
+    var savedStory : String = String()
     
-    var characterIndex = 1
+    var characterIndex : Int = Int()
     var musicOn: Bool = true
  
     
@@ -65,6 +66,12 @@ class NavViewController: UINavigationController {
         } else {
             print("no vlaue")
         }
+//        if NSUserDefaults.standardUserDefaults().objectForKey("charIndex") != nil {
+//            print("has value")
+//            self.characterIndex = NSUserDefaults.standardUserDefaults().objectForKey("charIndex") as! Int
+//        } else {
+//            print("no vlaue")
+//        }
     }
 
     override func didReceiveMemoryWarning() {
