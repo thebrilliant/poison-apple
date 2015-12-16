@@ -59,11 +59,15 @@ class MenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     override func viewWillAppear(animated: Bool) {
         setBackground()
-        if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != "" {
-            playerName.hidden = true
-            savedName.hidden = false
-            characterPicker.hidden = true
-            savedName.text = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String
+        if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != nil {
+            if NSUserDefaults.standardUserDefaults().objectForKey("name") as? String != ""  {
+                print(NSUserDefaults.standardUserDefaults().objectForKey("name") as? String)
+                playerName.hidden = true
+                savedName.hidden = false
+                characterPicker.hidden = true
+                savedName.text = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String
+            }
+            storyTitle.text = "You have a saved story!"
         }
     }
     
